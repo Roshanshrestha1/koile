@@ -461,8 +461,12 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
         console.log('Loading heart clicked via event listener!');
         loading.style.display = 'none';
         document.body.style.overflow = '';
-        // Play music and initialize after heart click
-        initializeMusic();
+        // Play music and initialize after heart click - pick random song and play
+        initializeMusic(true); // Pass true to indicate we want to play
+        // Also call startMusicOnUserInteraction to ensure it plays
+        setTimeout(() => {
+          window.startMusicOnUserInteraction();
+        }, 100);
         createFloatingElements();
         startTimer();
         initializePhotoUpload();
@@ -1856,7 +1860,7 @@ author: "Roshan SHrestha"
     }
 
     // Music functionality
-    function initializeMusic() {
+    function initializeMusic(shouldPlay = false) {
       const music = document.getElementById('bgMusic');
       const toggleBtn = document.getElementById('musicToggle');
       const volumeSlider = document.getElementById('volumeControl');
@@ -1871,7 +1875,11 @@ author: "Roshan SHrestha"
         { src: 'music/Thu Hea Kha.mp3', title: 'Thu Hea Kha' }
       ];
       window.musicTracks = musicTracks;
-      window.currentTrackIndex = 0;
+      
+      // Only initialize currentTrackIndex if not already set, or pick random if shouldPlay is true
+      if (window.currentTrackIndex === undefined || shouldPlay) {
+        window.currentTrackIndex = Math.floor(Math.random() * musicTracks.length);
+      }
       
       function loadTrack(index, autoPlay = true) {
         if (!musicTracks[index]) {
@@ -1884,21 +1892,31 @@ author: "Roshan SHrestha"
         music.load();
         localStorage.setItem('lastMusicIndex', index);
         
-        // Set start time to 10 seconds for 7 Years song
-        if (musicTracks[index].title === '7 Years') {
-          music.addEventListener('loadedmetadata', function() {
-            music.currentTime = 10; // Start from 10 seconds
-          }, { once: true });
-        }
-        
         if (autoPlay) {
-          // Try to play music with user interaction fallback
-          const playPromise = music.play();
-          if (playPromise !== undefined) {
-            playPromise.catch(error => {
-              console.log('Autoplay prevented, waiting for user interaction');
-              // Music will start when user clicks play button
-            });
+          // Wait for metadata to load before playing
+          music.addEventListener('loadedmetadata', function() {
+            // Set start time to 10 seconds for 7 Years song
+            if (musicTracks[index].title === '7 Years') {
+              music.currentTime = 10; // Start from 10 seconds
+            }
+            
+            const playPromise = music.play();
+            if (playPromise !== undefined) {
+              playPromise.then(() => {
+                console.log('Music started successfully');
+                updateMusicIcon();
+              }).catch(error => {
+                console.log('Autoplay prevented, waiting for user interaction');
+                // Music will start when user clicks play button
+              });
+            }
+          }, { once: true });
+        } else {
+          // Set start time to 10 seconds for 7 Years song even if not autoplaying
+          if (musicTracks[index].title === '7 Years') {
+            music.addEventListener('loadedmetadata', function() {
+              music.currentTime = 10; // Start from 10 seconds
+            }, { once: true });
           }
         }
       }
@@ -1946,18 +1964,8 @@ author: "Roshan SHrestha"
       
       // Initial icon and track (pick random on each load)
       if (musicTracks.length > 0) {
-        window.currentTrackIndex = Math.floor(Math.random() * musicTracks.length);
-        loadTrack(window.currentTrackIndex, true);
+        loadTrack(window.currentTrackIndex, shouldPlay);
         updateMusicIcon();
-        
-        // Try to start playing immediately
-        setTimeout(() => {
-          if (music.paused) {
-            music.play().catch(error => {
-              console.log('Autoplay prevented, music will start when user interacts');
-            });
-          }
-        }, 100);
       } else {
         trackTitle.textContent = 'No songs found';
       }
@@ -1968,19 +1976,58 @@ author: "Roshan SHrestha"
       const music = document.getElementById('bgMusic');
       const toggleBtn = document.getElementById('musicToggle');
       
-      if (music.paused) {
-        // Set start time to 10 seconds for 7 Years song
-        if (window.musicTracks && window.currentTrackIndex !== undefined && 
-            window.musicTracks[window.currentTrackIndex].title === '7 Years') {
-          music.currentTime = 10; // Start from 10 seconds
+      // Ensure music is initialized with a random track
+      if (window.musicTracks && window.currentTrackIndex === undefined) {
+        window.currentTrackIndex = Math.floor(Math.random() * window.musicTracks.length);
+      }
+      
+      // If music source is not set, load the track first
+      if (!music.src || music.src === '' || music.src === window.location.href) {
+        if (window.musicTracks && window.currentTrackIndex !== undefined) {
+          const track = window.musicTracks[window.currentTrackIndex];
+          music.src = track.src;
+          music.load();
+          
+          // Set start time to 10 seconds for 7 Years song
+          if (track.title === '7 Years') {
+            music.addEventListener('loadedmetadata', function() {
+              music.currentTime = 10;
+              music.play().then(() => {
+                toggleBtn.innerHTML = '<i class=\'fas fa-pause\'></i>';
+                console.log('Music started after user interaction');
+              }).catch(error => {
+                console.log('Failed to start music:', error);
+              });
+            }, { once: true });
+          } else {
+            music.addEventListener('loadeddata', function() {
+              music.play().then(() => {
+                toggleBtn.innerHTML = '<i class=\'fas fa-pause\'></i>';
+                console.log('Music started after user interaction');
+              }).catch(error => {
+                console.log('Failed to start music:', error);
+              });
+            }, { once: true });
+          }
         }
-        
-        music.play().then(() => {
-          toggleBtn.innerHTML = '<i class=\'fas fa-pause\'></i>';
-          console.log('Music started after user interaction');
-        }).catch(error => {
-          console.log('Failed to start music:', error);
-        });
+      } else {
+        // Music is already loaded, just play it
+        if (music.paused) {
+          // Set start time to 10 seconds for 7 Years song
+          if (window.musicTracks && window.currentTrackIndex !== undefined && 
+              window.musicTracks[window.currentTrackIndex].title === '7 Years') {
+            if (music.currentTime < 10) {
+              music.currentTime = 10; // Start from 10 seconds
+            }
+          }
+          
+          music.play().then(() => {
+            toggleBtn.innerHTML = '<i class=\'fas fa-pause\'></i>';
+            console.log('Music started after user interaction');
+          }).catch(error => {
+            console.log('Failed to start music:', error);
+          });
+        }
       }
     }
 
