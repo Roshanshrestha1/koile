@@ -106,7 +106,8 @@
       transition: all 0.3s ease;
       backdrop-filter: blur(10px);
       font-weight: 600;
-      transform: translateY(0);
+      transform: translateY(0) translateZ(0);
+      will-change: backdrop-filter, transform;
     }
 
     /* Hide language button when scrolling down */
@@ -265,6 +266,8 @@
       border-radius: 30px;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.2);
+      will-change: backdrop-filter;
+      transform: translateZ(0);
     }
 
     .header h1 {
@@ -297,6 +300,8 @@
       backdrop-filter: blur(15px);
       border: 2px solid rgba(255, 255, 255, 0.3);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      will-change: backdrop-filter;
+      transform: translateZ(0);
     }
 
     .timer {
@@ -325,6 +330,8 @@
       backdrop-filter: blur(20px);
       border: 2px solid rgba(255, 255, 255, 0.2);
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      will-change: backdrop-filter;
+      transform: translateZ(0);
     }
 
     .section h2 {
@@ -398,6 +405,8 @@
       background: rgba(0, 0, 0, 0.8);
       z-index: 2000;
       backdrop-filter: blur(10px);
+      will-change: backdrop-filter;
+      transform: translateZ(0);
     }
 
     .letter-content {
@@ -476,6 +485,8 @@
       cursor: pointer;
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
+      will-change: backdrop-filter;
+      transform: translateZ(0);
     }
 
     .photo-item:hover {
@@ -1380,7 +1391,8 @@
       backdrop-filter: blur(10px);
       font-weight: 600;
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) translateZ(0);
+      will-change: backdrop-filter, transform;
     }
 
     /* Theme Toggle when language selector is open - HIDE */
@@ -1717,6 +1729,8 @@
     .letter-modal.showing {
       background: rgba(0, 0, 0, 0.95);
       backdrop-filter: blur(20px);
+      will-change: backdrop-filter;
+      transform: translateZ(0);
     }
 
     .letter-content {
@@ -1755,6 +1769,8 @@
       transition: all 0.3s ease;
       backdrop-filter: blur(10px);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      will-change: backdrop-filter;
+      transform: translateZ(0);
       z-index: 1002;
       display: flex;
       align-items: center;
@@ -2096,6 +2112,8 @@
       backdrop-filter: blur(15px);
       border: 2px solid rgba(255, 255, 255, 0.2);
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      will-change: backdrop-filter;
+      transform: translateZ(0);
     }
 
     .game-header {
@@ -2350,7 +2368,7 @@
   <!-- Loading Screen -->
   <div class="loading" id="loading" style="align-items:center; justify-content:center;">
     <div class="loading-content" style="text-align:center;">
-      <div id="loadingHeart" class="loading-heart" style="font-size:6rem; cursor:pointer; user-select:none; transition:transform 0.2s;" onclick="console.log('Heart clicked!'); document.getElementById('loading').style.display='none'; document.body.style.overflow=''; startMusicOnUserInteraction(); createFloatingElements(); startTimer(); initializePhotoUpload(); initParticles(); updateQuote(); setInterval(updateQuote, 30000);">💖</div>
+      <div id="loadingHeart" class="loading-heart" style="font-size:6rem; cursor:pointer; user-select:none; transition:transform 0.2s;">💖</div>
       <div class="loading-text" style="margin-top:20px; font-size:1.5rem;">Click the heart to open the love story</div>
     </div>
   </div>
