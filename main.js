@@ -1870,15 +1870,61 @@ author: "Roshan SHrestha"
       
       // Hardcoded music tracks for static hosting (GitHub Pages compatible)
       let musicTracks = [
-        { src: 'music/7_years.mp3', title: '7 Years' },
+        { src: 'music/Christina Perri - A Thousand Years.mp3', title: 'A Thousand Years' },
+        { src: 'music/Ed Sheeran - Perfect.mp3', title: 'Perfect' },
+        { src: 'music/Lukas Graham - 7 Years.mp3', title: '7 Years' },
         { src: 'music/Par khe ra .mp3', title: 'Par khe ra' },
-        { src: 'music/Thu Hea Kha.mp3', title: 'Thu Hea Kha' }
+        { src: 'music/Sia - Unstoppable (Lyrics).mp3', title: 'Unstoppable' },
+        { src: 'music/Thu Hea Kha.mp3', title: 'Thu Hea Kha' },
+        { src: 'music/Timro Pratiksa - Shallum Lama (To Mini)[Official Video].mp3', title: 'Timro Pratiksa' },
+        { src: 'music/TU HAI KAHAN  Reply Version  Female  New Lyrics.mp3', title: 'Tu Hai Kahan' },
+        { src: 'music/Yabesh Thapa - Kasari  कसर.mp3', title: 'Kasari' }
       ];
       window.musicTracks = musicTracks;
       
+      // Track which songs have been played to ensure random selection
+      if (!window.playedSongs) {
+        window.playedSongs = [];
+      }
+      
+      // Function to get a random song that hasn't been played recently
+      window.getRandomTrack = function() {
+        // If all songs have been played, reset the list
+        if (window.playedSongs.length >= musicTracks.length) {
+          window.playedSongs = [];
+        }
+        
+        // Get available songs (not recently played)
+        const availableSongs = musicTracks.filter((_, index) => !window.playedSongs.includes(index));
+        
+        // If no available songs, use all songs
+        const songsToChooseFrom = availableSongs.length > 0 ? availableSongs : musicTracks;
+        
+        // Pick a random song from available songs
+        const randomIndex = Math.floor(Math.random() * songsToChooseFrom.length);
+        const selectedTrack = songsToChooseFrom[randomIndex];
+        
+        // Find the original index
+        const originalIndex = musicTracks.findIndex(track => track.src === selectedTrack.src);
+        
+        // Add to played songs
+        window.playedSongs.push(originalIndex);
+        
+        return originalIndex;
+      };
+      
       // Only initialize currentTrackIndex if not already set, or pick random if shouldPlay is true
       if (window.currentTrackIndex === undefined || shouldPlay) {
-        window.currentTrackIndex = Math.floor(Math.random() * musicTracks.length);
+        window.currentTrackIndex = window.getRandomTrack();
+      }
+      
+      // Function to handle when song ends - play next random song
+      function handleSongEnded() {
+        console.log('Song ended, playing next random song...');
+        // Get a new random song
+        window.currentTrackIndex = window.getRandomTrack();
+        loadTrack(window.currentTrackIndex, true);
+        updateMusicIcon();
       }
       
       function loadTrack(index, autoPlay = true) {
@@ -1887,23 +1933,32 @@ author: "Roshan SHrestha"
           music.src = '';
           return;
         }
+        
+        // Remove any existing ended event listeners
+        music.removeEventListener('ended', handleSongEnded);
+        
         music.src = musicTracks[index].src;
         trackTitle.textContent = musicTracks[index].title;
         music.load();
         localStorage.setItem('lastMusicIndex', index);
         
+        // Add ended event listener to play next random song
+        music.addEventListener('ended', handleSongEnded);
+        
         if (autoPlay) {
           // Wait for metadata to load before playing
           music.addEventListener('loadedmetadata', function() {
-            // Set start time to 10 seconds for 7 Years song
-            if (musicTracks[index].title === '7 Years') {
+            // Set start time for specific songs
+            if (musicTracks[index].title === '7 Years' || musicTracks[index].src.includes('7 Years')) {
               music.currentTime = 10; // Start from 10 seconds
+            } else if (musicTracks[index].title === 'Kasari' || musicTracks[index].src.includes('Kasari')) {
+              music.currentTime = 40; // Start from 40 seconds (0:40)
             }
             
             const playPromise = music.play();
             if (playPromise !== undefined) {
               playPromise.then(() => {
-                console.log('Music started successfully');
+                console.log('Music started successfully:', musicTracks[index].title);
                 updateMusicIcon();
               }).catch(error => {
                 console.log('Autoplay prevented, waiting for user interaction');
@@ -1912,10 +1967,14 @@ author: "Roshan SHrestha"
             }
           }, { once: true });
         } else {
-          // Set start time to 10 seconds for 7 Years song even if not autoplaying
-          if (musicTracks[index].title === '7 Years') {
+          // Set start time for specific songs even if not autoplaying
+          if (musicTracks[index].title === '7 Years' || musicTracks[index].src.includes('7 Years')) {
             music.addEventListener('loadedmetadata', function() {
               music.currentTime = 10; // Start from 10 seconds
+            }, { once: true });
+          } else if (musicTracks[index].title === 'Kasari' || musicTracks[index].src.includes('Kasari')) {
+            music.addEventListener('loadedmetadata', function() {
+              music.currentTime = 40; // Start from 40 seconds (0:40)
             }, { once: true });
           }
         }
@@ -1947,17 +2006,19 @@ author: "Roshan SHrestha"
       music.addEventListener('play', updateMusicIcon);
       music.addEventListener('pause', updateMusicIcon);
       
-      // Next/Prev track
+      // Next/Prev track - also use random selection
       window.playNextTrack = function() {
         if (!musicTracks.length) return;
-        window.currentTrackIndex = (window.currentTrackIndex + 1) % musicTracks.length;
+        // Play next random song
+        window.currentTrackIndex = window.getRandomTrack();
         loadTrack(window.currentTrackIndex, true);
         updateMusicIcon();
       };
       
       window.playPrevTrack = function() {
         if (!musicTracks.length) return;
-        window.currentTrackIndex = (window.currentTrackIndex - 1 + musicTracks.length) % musicTracks.length;
+        // Play previous random song (or just another random)
+        window.currentTrackIndex = window.getRandomTrack();
         loadTrack(window.currentTrackIndex, true);
         updateMusicIcon();
       };
@@ -1978,7 +2039,12 @@ author: "Roshan SHrestha"
       
       // Ensure music is initialized with a random track
       if (window.musicTracks && window.currentTrackIndex === undefined) {
-        window.currentTrackIndex = Math.floor(Math.random() * window.musicTracks.length);
+        // Use the getRandomTrack function if available, otherwise use simple random
+        if (typeof window.getRandomTrack === 'function') {
+          window.currentTrackIndex = window.getRandomTrack();
+        } else {
+          window.currentTrackIndex = Math.floor(Math.random() * window.musicTracks.length);
+        }
       }
       
       // If music source is not set, load the track first
@@ -1988,10 +2054,20 @@ author: "Roshan SHrestha"
           music.src = track.src;
           music.load();
           
-          // Set start time to 10 seconds for 7 Years song
-          if (track.title === '7 Years') {
+          // Set start time for specific songs
+          if (track.title === '7 Years' || track.src.includes('7 Years')) {
             music.addEventListener('loadedmetadata', function() {
               music.currentTime = 10;
+              music.play().then(() => {
+                toggleBtn.innerHTML = '<i class=\'fas fa-pause\'></i>';
+                console.log('Music started after user interaction');
+              }).catch(error => {
+                console.log('Failed to start music:', error);
+              });
+            }, { once: true });
+          } else if (track.title === 'Kasari' || track.src.includes('Kasari')) {
+            music.addEventListener('loadedmetadata', function() {
+              music.currentTime = 40; // Start from 40 seconds (0:40)
               music.play().then(() => {
                 toggleBtn.innerHTML = '<i class=\'fas fa-pause\'></i>';
                 console.log('Music started after user interaction');
@@ -2013,11 +2089,19 @@ author: "Roshan SHrestha"
       } else {
         // Music is already loaded, just play it
         if (music.paused) {
-          // Set start time to 10 seconds for 7 Years song
-          if (window.musicTracks && window.currentTrackIndex !== undefined && 
-              window.musicTracks[window.currentTrackIndex].title === '7 Years') {
-            if (music.currentTime < 10) {
-              music.currentTime = 10; // Start from 10 seconds
+          // Set start time for specific songs
+          if (window.musicTracks && window.currentTrackIndex !== undefined) {
+            const currentTrack = window.musicTracks[window.currentTrackIndex];
+            if (currentTrack) {
+              if (currentTrack.title === '7 Years' || currentTrack.src.includes('7 Years')) {
+                if (music.currentTime < 10) {
+                  music.currentTime = 10; // Start from 10 seconds
+                }
+              } else if (currentTrack.title === 'Kasari' || currentTrack.src.includes('Kasari')) {
+                if (music.currentTime < 40) {
+                  music.currentTime = 40; // Start from 40 seconds (0:40)
+                }
+              }
             }
           }
           
@@ -2036,10 +2120,16 @@ author: "Roshan SHrestha"
       const music = document.getElementById('bgMusic');
       const toggleBtn = document.getElementById('musicToggle');
       if (music.paused) {
-        // Set start time to 10 seconds for 7 Years song
-        if (window.musicTracks && window.currentTrackIndex !== undefined && 
-            window.musicTracks[window.currentTrackIndex].title === '7 Years') {
-          music.currentTime = 10; // Start from 10 seconds
+        // Set start time for specific songs
+        if (window.musicTracks && window.currentTrackIndex !== undefined) {
+          const currentTrack = window.musicTracks[window.currentTrackIndex];
+          if (currentTrack) {
+            if (currentTrack.title === '7 Years' || currentTrack.src.includes('7 Years')) {
+              music.currentTime = 10; // Start from 10 seconds
+            } else if (currentTrack.title === 'Kasari' || currentTrack.src.includes('Kasari')) {
+              music.currentTime = 40; // Start from 40 seconds (0:40)
+            }
+          }
         }
         
         music.play().then(() => {
