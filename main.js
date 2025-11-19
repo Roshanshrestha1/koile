@@ -48,7 +48,12 @@ Aaru ta khei vannu xaian, aafo ra aafno pariwar ko kheal gara. 🏡💛
 Timro yaad ta aaudaina bhanera kasari vanu? 🥺
 Aaja 08/03… ani aba timro birthday pani aaudai cha 🎂✨
 Sachi… timro birthday ko din ma timilai Happy Birthday vanna sakdina ma sangha tyo yaat xaina 😔
-I’m so sorry… hai, ma lai maaf garideu please 🙏💔 
+
+I’m so sorry… hai, ma lai maaf garideu please 🙏💔
+Happy Birthday Anjan 🎉🥳
+Timro aagdai bhanna ta sakina… tara yo dil bata timilai dherai dherai maya ra subha kamana xa
+Temi farkinxau vane  aasha cha, sanga… ❤️�
+Ra temle malai feri ek choti chance dinchau hai…? 🙏❤️🥺�
 `
       },
       np: {
