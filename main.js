@@ -44,7 +44,11 @@ Ma timi lai samjhiraheko chu. 💌
 Antim Sabdha,
          aafno kheal gara, aafno jiban ma aagi badha, timro model banne sapana pura gara. 🌟 Sayad aaba Dashai aauxai xa haii, mearo tarfa bata pani Happy Dashai xa. 🎉🪔
 Aaru ta khei vannu xaian, aafo ra aafno pariwar ko kheal gara. 🏡💛
-    
+    Sanu ❤️,
+Timro yaad ta aaudaina bhanera kasari vanu? 🥺
+Aaja 08/03… ani aba timro birthday pani aaudai cha 🎂✨
+Sachi… timro birthday ko din ma timilai Happy Birthday vanna sakdina ma sangha tyo yaat xaina 😔
+I’m so sorry… hai, ma lai maaf garideu please 🙏💔 
 `
       },
       np: {
