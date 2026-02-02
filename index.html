@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>🐼🦜🌹 Forever Loving You 🌹🦜🐼</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27><text y=%2714%27 font-size=%2716%27>💖</text></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27><text y=%2714%27 font-size=%2716%27>💖</text></svg>">
   <style>
     * {
       margin: 0;
@@ -44,7 +48,7 @@
       width: 100%;
       height: 100%;
       z-index: 1;
-      background: 
+      background:
         radial-gradient(circle at 20% 80%, rgba(255, 107, 157, 0.3) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(39, 174, 96, 0.3) 0%, transparent 50%),
         radial-gradient(circle at 40% 40%, rgba(231, 76, 60, 0.3) 0%, transparent 50%);
@@ -52,8 +56,15 @@
     }
 
     @keyframes bgShift {
-      0%, 100% { transform: scale(1) rotate(0deg); }
-      50% { transform: scale(1.1) rotate(1deg); }
+
+      0%,
+      100% {
+        transform: scale(1) rotate(0deg);
+      }
+
+      50% {
+        transform: scale(1.1) rotate(1deg);
+      }
     }
 
     /* Floating Elements */
@@ -73,16 +84,42 @@
       animation: float 8s ease-in-out infinite;
     }
 
-    .panda { color: var(--panda-black); }
-    .parrot { color: var(--parrot-green); }
-    .rose { color: var(--rose-red); }
-    .heart { color: var(--rose-pink); }
+    .panda {
+      color: var(--panda-black);
+    }
+
+    .parrot {
+      color: var(--parrot-green);
+    }
+
+    .rose {
+      color: var(--rose-red);
+    }
+
+    .heart {
+      color: var(--rose-pink);
+    }
 
     @keyframes float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+      }
     }
 
     /* Main Content */
@@ -116,10 +153,12 @@
       opacity: 0;
       transition: all 0.1s ease;
     }
+
     .lang-toggle-btn:hover {
       background: var(--rose-pink);
       transform: scale(1.1);
     }
+
     /* Language Selector */
     .language-selector {
       position: fixed;
@@ -129,17 +168,19 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
-      background: rgba(255,255,255,0.15);
+      background: rgba(255, 255, 255, 0.15);
       padding: 8px;
       border-radius: 15px;
-      border: 1px solid rgba(255,255,255,0.2);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     }
+
     @media (max-width: 768px) {
       .lang-toggle-btn {
         top: 10px;
         right: 10px;
       }
+
       .language-selector {
         top: 50px;
         right: 10px;
@@ -160,7 +201,8 @@
       font-weight: 600;
     }
 
-    .lang-btn:hover, .lang-btn.active {
+    .lang-btn:hover,
+    .lang-btn.active {
       background: var(--rose-pink);
       transform: scale(1.1);
     }
@@ -175,12 +217,13 @@
       top: 20px;
       left: 20px;
       z-index: 1000;
-      background: rgba(255,255,255,0.12);
+      background: rgba(255, 255, 255, 0.12);
       border-radius: 18px;
       padding: 18px 16px 14px 16px;
       box-shadow: 0 8px 25px rgba(255, 107, 157, 0.2);
       min-width: 170px;
     }
+
     .music-title-row {
       font-weight: bold;
       font-size: 1.1rem;
@@ -189,6 +232,7 @@
       width: 100%;
       display: block;
     }
+
     .music-btn-row {
       display: flex;
       flex-direction: row;
@@ -197,6 +241,7 @@
       gap: 10px;
       margin-bottom: 8px;
     }
+
     .music-toggle.small-btn {
       width: 36px;
       height: 36px;
@@ -207,12 +252,14 @@
       align-items: center;
       justify-content: center;
     }
+
     .music-divider {
       width: 80%;
       border: none;
       border-top: 1.5px solid #fff6;
       margin: 8px 0 8px 0;
     }
+
     .music-controls input[type="range"] {
       width: 90px;
     }
@@ -570,50 +617,121 @@
 
     /* Animations */
     @keyframes gradientShift {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
     }
 
     @keyframes fadeInDown {
-      0% { opacity: 0; transform: translateY(-40px); }
-      100% { opacity: 1; transform: translateY(0); }
+      0% {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @keyframes glow {
-      0% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); }
-      100% { text-shadow: 2px 2px 25px rgba(255, 255, 255, 0.6); }
+      0% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      100% {
+        text-shadow: 2px 2px 25px rgba(255, 255, 255, 0.6);
+      }
     }
 
     @keyframes floatEnvelope {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-15px); }
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
     }
 
     @keyframes modalSlideIn {
-      0% { opacity: 0; transform: translate(-50%, -60%); }
-      100% { opacity: 1; transform: translate(-50%, -50%); }
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
     }
 
     @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
     }
 
     @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-10px); }
-      60% { transform: translateY(-5px); }
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+
+      40% {
+        transform: translateY(-10px);
+      }
+
+      60% {
+        transform: translateY(-5px);
+      }
     }
 
     @keyframes flowerBloom {
-      0% { transform: scale(0) rotate(0deg); opacity: 0; }
-      50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
-      100% { transform: scale(1) rotate(360deg); opacity: 1; }
+      0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      50% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 1;
+      }
     }
 
     @keyframes floatUp {
-      0% { transform: translateY(0px) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+      0% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
     }
 
     /* Responsive Design */
@@ -623,101 +741,101 @@
         margin: 10px;
         border-radius: 20px;
       }
-      
+
       .header h1 {
         font-size: 2.5rem;
         line-height: 1.2;
         margin-bottom: 20px;
       }
-      
+
       .header-subtitle {
         font-size: 1.1rem;
         margin-bottom: 15px;
       }
-      
+
       .timer-container {
         padding: 25px 20px;
         margin: 20px auto;
         border-radius: 20px;
       }
-      
+
       .timer {
         font-size: 1.4rem;
         line-height: 1.3;
       }
-      
+
       .timer-subtitle {
         font-size: 1rem;
         margin-top: 10px;
       }
-      
+
       .section {
         margin: 30px 10px;
         padding: 40px 20px;
         border-radius: 20px;
       }
-      
+
       .section h2 {
         font-size: 2rem;
         margin-bottom: 30px;
       }
-      
+
       .photo-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 20px;
       }
-      
+
       .photo-item img {
         height: 250px;
       }
-      
+
       .love-calculator {
         padding: 25px 20px;
         margin: 15px auto;
         max-width: 350px;
       }
-      
+
       .love-calculator h3 {
         font-size: 1.6rem;
         margin-bottom: 15px;
       }
-      
+
       .love-calculator input {
         padding: 15px;
         font-size: 1.1rem;
         margin: 12px 0;
       }
-      
+
       .love-calculator button {
         padding: 15px 30px;
         font-size: 1.2rem;
         margin-top: 20px;
       }
-      
+
       .love-result {
         font-size: 1.3rem;
         margin-top: 15px;
         line-height: 1.4;
       }
-      
+
       .music-controls.row-layout {
         top: 10px;
         left: 10px;
         padding: 15px 12px 12px 12px;
         min-width: 150px;
       }
-      
+
       .music-title-row {
         font-size: 1rem;
         margin-bottom: 6px;
       }
-      
+
       .music-toggle.small-btn {
         width: 32px;
         height: 32px;
         font-size: 14px;
       }
-      
+
       .music-controls input[type="range"] {
         width: 80px;
       }
@@ -732,7 +850,7 @@
         height: 18px;
         font-size: 9px;
       }
-      
+
       .language-selector {
         top: 50px;
         right: 10px;
@@ -740,19 +858,19 @@
         padding: 8px;
         gap: 8px;
       }
-      
+
       .lang-btn {
         padding: 6px 12px;
         font-size: 0.9rem;
       }
-      
+
       .lang-toggle-btn {
         top: 10px;
         right: 10px;
         padding: 6px 12px;
         font-size: 0.9rem;
       }
-      
+
       .theme-toggle {
         top: 10px;
         right: 110px;
@@ -773,28 +891,28 @@
         transform: translateY(0);
         pointer-events: auto;
       }
-      
+
       .envelope {
         width: 150px;
         height: 100px;
       }
-      
+
       .envelope::after {
         font-size: 2rem;
       }
-      
+
       .letter-content {
         padding: 50px 25px 25px 25px;
         max-width: 95%;
         max-height: 95%;
         border-radius: 20px;
       }
-      
+
       .letter-header h2 {
         font-size: 2.2rem;
         margin-bottom: 15px;
       }
-      
+
       .letter-text {
         font-size: 1.1rem;
         line-height: 1.7;
@@ -806,7 +924,7 @@
         letter-spacing: 0.3px;
         color: #2c3e50;
       }
-      
+
       .letter-close-btn {
         top: 15px;
         right: 20px;
@@ -814,170 +932,170 @@
         height: 48px;
         font-size: 2.2rem;
       }
-      
+
       .slideshow-container {
         margin: 20px auto;
         border-radius: 15px;
       }
-      
+
       .slideshow-slide {
         height: 300px;
       }
-      
+
       .slideshow-nav {
         bottom: 15px;
         gap: 8px;
       }
-      
+
       .slideshow-dot {
         width: 10px;
         height: 10px;
       }
-      
+
       .upload-section {
         padding: 30px 20px;
         margin-top: 30px;
       }
-      
+
       .upload-btn {
         padding: 15px 30px;
         font-size: 1.1rem;
       }
-      
+
       .footer {
         padding: 40px 15px;
         margin: 60px 10px 10px;
         border-radius: 15px;
       }
-      
+
       .footer p {
         font-size: 1.1rem;
         line-height: 1.5;
       }
-      
+
       .love-quotes {
         padding: 20px;
         margin: 15px auto;
       }
-      
+
       .quote-text {
         font-size: 1.1rem;
         line-height: 1.5;
       }
-      
+
       .quote-author {
         font-size: 0.9rem;
       }
     }
-    
+
     /* Extra small devices (phones in portrait) */
     @media (max-width: 480px) {
       .header {
         padding: 60px 10px 40px;
         margin: 5px;
       }
-      
+
       .header h1 {
         font-size: 2rem;
         margin-bottom: 15px;
       }
-      
+
       .header-subtitle {
         font-size: 1rem;
       }
-      
+
       .timer-container {
         padding: 20px 15px;
         margin: 15px auto;
       }
-      
+
       .timer {
         font-size: 1.2rem;
       }
-      
+
       .section {
         margin: 20px 5px;
         padding: 30px 15px;
       }
-      
+
       .section h2 {
         font-size: 1.8rem;
         margin-bottom: 25px;
       }
-      
+
       .photo-grid {
         grid-template-columns: 1fr;
         gap: 15px;
       }
-      
+
       .photo-item img {
         height: 220px;
       }
-      
+
       .love-calculator {
         padding: 20px 15px;
         margin: 10px auto;
         max-width: 320px;
       }
-      
+
       .love-calculator h3 {
         font-size: 1.4rem;
       }
-      
+
       .love-calculator input {
         padding: 12px;
         font-size: 1rem;
       }
-      
+
       .love-calculator button {
         padding: 12px 25px;
         font-size: 1.1rem;
       }
-      
+
       .love-result {
         font-size: 1.2rem;
       }
-      
+
       .music-controls.row-layout {
         top: 5px;
         left: 5px;
         padding: 12px 10px 10px 10px;
         min-width: 140px;
       }
-      
+
       .music-title-row {
         font-size: 0.9rem;
       }
-      
+
       .music-toggle.small-btn {
         width: 30px;
         height: 30px;
         font-size: 12px;
       }
-      
+
       .music-controls input[type="range"] {
         width: 70px;
       }
-      
+
       .language-selector {
         top: 45px;
         right: 5px;
         padding: 6px;
         gap: 6px;
       }
-      
+
       .lang-btn {
         padding: 5px 10px;
         font-size: 0.8rem;
       }
-      
+
       .lang-toggle-btn {
         top: 5px;
         right: 5px;
         padding: 5px 10px;
         font-size: 0.8rem;
       }
-      
+
       .theme-toggle {
         top: 5px;
         right: 95px;
@@ -998,16 +1116,16 @@
         transform: translateY(0);
         pointer-events: auto;
       }
-      
+
       .envelope {
         width: 120px;
         height: 80px;
       }
-      
+
       .envelope::after {
         font-size: 1.8rem;
       }
-      
+
       .letter-content {
         padding: 60px 20px 20px 20px;
         max-width: 100%;
@@ -1020,12 +1138,12 @@
         transform: none;
         position: fixed;
       }
-      
+
       .letter-header h2 {
         font-size: 1.8rem;
         margin-bottom: 20px;
       }
-      
+
       .letter-text {
         font-size: 1rem;
         line-height: 1.7;
@@ -1047,7 +1165,7 @@
         font-size: 2rem;
         background: rgba(231, 76, 60, 0.95);
       }
-      
+
       .slideshow-slide {
         height: 250px;
       }
@@ -1064,33 +1182,33 @@
         left: 50% !important;
         transform: translate(-50%, -50%) !important;
       }
-      
+
       .upload-section {
         padding: 25px 15px;
       }
-      
+
       .upload-btn {
         padding: 12px 25px;
         font-size: 1rem;
       }
-      
+
       .footer {
         padding: 30px 10px;
         margin: 40px 5px 5px;
       }
-      
+
       .footer p {
         font-size: 1rem;
       }
-      
+
       .love-quotes {
         padding: 15px;
       }
-      
+
       .quote-text {
         font-size: 1rem;
       }
-      
+
       .quote-author {
         font-size: 0.8rem;
       }
@@ -1130,51 +1248,63 @@
       .custom-cursor {
         display: none;
       }
-      
+
       /* Improve touch targets */
-      button, .lang-btn, .theme-toggle, .music-toggle, .envelope, .photo-item, .slideshow-dot {
+      button,
+      .lang-btn,
+      .theme-toggle,
+      .music-toggle,
+      .envelope,
+      .photo-item,
+      .slideshow-dot {
         min-height: 44px;
         min-width: 44px;
         touch-action: manipulation;
       }
-      
+
       /* Better touch feedback */
-      button:active, .lang-btn:active, .theme-toggle:active, .music-toggle:active {
+      button:active,
+      .lang-btn:active,
+      .theme-toggle:active,
+      .music-toggle:active {
         transform: scale(0.95);
         transition: transform 0.1s ease;
       }
-      
+
       /* Prevent zoom on input focus */
-      input, textarea, select {
+      input,
+      textarea,
+      select {
         font-size: 16px;
         transform: translateZ(0);
       }
-      
+
       /* Smooth scrolling */
       html {
         -webkit-overflow-scrolling: touch;
         scroll-behavior: smooth;
       }
-      
+
       /* Better modal handling on mobile */
-      .letter-modal, .letter-modal .letter-content {
+      .letter-modal,
+      .letter-modal .letter-content {
         -webkit-overflow-scrolling: touch;
         overscroll-behavior: contain;
       }
-      
+
       /* Improve floating elements for mobile */
       .floating-item {
         font-size: 1.5rem;
         animation-duration: 6s;
       }
-      
+
       /* Better photo grid for mobile */
       .photo-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 15px;
         padding: 0 10px;
       }
-      
+
       /* Improve love calculator for mobile */
       .love-calculator {
         margin: 20px 10px;
@@ -1212,151 +1342,440 @@
 
       /* Collection effect animations */
       @keyframes collectionEffectheart {
-        0% { transform: translateY(0px) scale(1) rotate(0deg); opacity: 1; }
-        50% { transform: translateY(-30px) scale(1.5) rotate(180deg); opacity: 0.8; }
-        100% { transform: translateY(-60px) scale(0.5) rotate(360deg); opacity: 0; }
+        0% {
+          transform: translateY(0px) scale(1) rotate(0deg);
+          opacity: 1;
+        }
+
+        50% {
+          transform: translateY(-30px) scale(1.5) rotate(180deg);
+          opacity: 0.8;
+        }
+
+        100% {
+          transform: translateY(-60px) scale(0.5) rotate(360deg);
+          opacity: 0;
+        }
       }
 
       @keyframes collectionEffectrose {
-        0% { transform: translateY(0px) scale(1); opacity: 1; }
-        25% { transform: translateY(-15px) scale(1.2) rotate(-10deg); opacity: 0.9; }
-        50% { transform: translateY(-30px) scale(1.5) rotate(10deg); opacity: 0.8; }
-        75% { transform: translateY(-45px) scale(1.2) rotate(-5deg); opacity: 0.6; }
-        100% { transform: translateY(-60px) scale(0.5) rotate(0deg); opacity: 0; }
+        0% {
+          transform: translateY(0px) scale(1);
+          opacity: 1;
+        }
+
+        25% {
+          transform: translateY(-15px) scale(1.2) rotate(-10deg);
+          opacity: 0.9;
+        }
+
+        50% {
+          transform: translateY(-30px) scale(1.5) rotate(10deg);
+          opacity: 0.8;
+        }
+
+        75% {
+          transform: translateY(-45px) scale(1.2) rotate(-5deg);
+          opacity: 0.6;
+        }
+
+        100% {
+          transform: translateY(-60px) scale(0.5) rotate(0deg);
+          opacity: 0;
+        }
       }
 
       @keyframes collectionEffectcouple {
-        0% { transform: translateY(0px) scale(1); opacity: 1; }
-        50% { transform: translateY(-30px) scale(1.8); opacity: 0.8; }
-        100% { transform: translateY(-60px) scale(0.3); opacity: 0; }
+        0% {
+          transform: translateY(0px) scale(1);
+          opacity: 1;
+        }
+
+        50% {
+          transform: translateY(-30px) scale(1.8);
+          opacity: 0.8;
+        }
+
+        100% {
+          transform: translateY(-60px) scale(0.3);
+          opacity: 0;
+        }
       }
 
       @keyframes collectionEffectdiamond {
-        0% { transform: translateY(0px) scale(1) rotate(0deg); opacity: 1; }
-        25% { transform: translateY(-20px) scale(1.3) rotate(90deg); opacity: 0.9; }
-        50% { transform: translateY(-40px) scale(1.6) rotate(180deg); opacity: 0.8; }
-        75% { transform: translateY(-50px) scale(1.3) rotate(270deg); opacity: 0.6; }
-        100% { transform: translateY(-70px) scale(0.5) rotate(360deg); opacity: 0; }
+        0% {
+          transform: translateY(0px) scale(1) rotate(0deg);
+          opacity: 1;
+        }
+
+        25% {
+          transform: translateY(-20px) scale(1.3) rotate(90deg);
+          opacity: 0.9;
+        }
+
+        50% {
+          transform: translateY(-40px) scale(1.6) rotate(180deg);
+          opacity: 0.8;
+        }
+
+        75% {
+          transform: translateY(-50px) scale(1.3) rotate(270deg);
+          opacity: 0.6;
+        }
+
+        100% {
+          transform: translateY(-70px) scale(0.5) rotate(360deg);
+          opacity: 0;
+        }
       }
 
       @keyframes collectionEffectmagic {
-        0% { transform: translateY(0px) scale(1); opacity: 1; }
-        25% { transform: translateY(-20px) scale(1.4); opacity: 0.9; }
-        50% { transform: translateY(-40px) scale(1.8); opacity: 0.8; }
-        75% { transform: translateY(-60px) scale(1.4); opacity: 0.6; }
-        100% { transform: translateY(-80px) scale(0.3); opacity: 0; }
+        0% {
+          transform: translateY(0px) scale(1);
+          opacity: 1;
+        }
+
+        25% {
+          transform: translateY(-20px) scale(1.4);
+          opacity: 0.9;
+        }
+
+        50% {
+          transform: translateY(-40px) scale(1.8);
+          opacity: 0.8;
+        }
+
+        75% {
+          transform: translateY(-60px) scale(1.4);
+          opacity: 0.6;
+        }
+
+        100% {
+          transform: translateY(-80px) scale(0.3);
+          opacity: 0;
+        }
       }
 
       @keyframes sparkleEffect {
-        0% { transform: scale(0) rotate(0deg); opacity: 1; }
-        50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
-        100% { transform: scale(0.5) rotate(360deg); opacity: 0; }
+        0% {
+          transform: scale(0) rotate(0deg);
+          opacity: 1;
+        }
+
+        50% {
+          transform: scale(1.2) rotate(180deg);
+          opacity: 0.8;
+        }
+
+        100% {
+          transform: scale(0.5) rotate(360deg);
+          opacity: 0;
+        }
       }
 
       @keyframes boomEffect {
-        0% { transform: scale(0.5) rotate(0deg); opacity: 1; }
-        50% { transform: scale(1.5) rotate(180deg); opacity: 0.8; }
-        100% { transform: scale(0.2) rotate(360deg); opacity: 0; }
+        0% {
+          transform: scale(0.5) rotate(0deg);
+          opacity: 1;
+        }
+
+        50% {
+          transform: scale(1.5) rotate(180deg);
+          opacity: 0.8;
+        }
+
+        100% {
+          transform: scale(0.2) rotate(360deg);
+          opacity: 0;
+        }
       }
 
       @keyframes boomParticle {
-        0% { transform: scale(1) translate(0, 0); opacity: 1; }
-        50% { transform: scale(1.2) translate(20px, -20px); opacity: 0.8; }
-        100% { transform: scale(0.3) translate(40px, -40px); opacity: 0; }
+        0% {
+          transform: scale(1) translate(0, 0);
+          opacity: 1;
+        }
+
+        50% {
+          transform: scale(1.2) translate(20px, -20px);
+          opacity: 0.8;
+        }
+
+        100% {
+          transform: scale(0.3) translate(40px, -40px);
+          opacity: 0;
+        }
       }
 
       @keyframes megaBoomEffect {
-        0% { transform: scale(0.3) rotate(0deg); opacity: 1; }
-        25% { transform: scale(1.8) rotate(90deg); opacity: 0.9; }
-        50% { transform: scale(2.2) rotate(180deg); opacity: 0.8; }
-        75% { transform: scale(1.5) rotate(270deg); opacity: 0.6; }
-        100% { transform: scale(0.1) rotate(360deg); opacity: 0; }
+        0% {
+          transform: scale(0.3) rotate(0deg);
+          opacity: 1;
+        }
+
+        25% {
+          transform: scale(1.8) rotate(90deg);
+          opacity: 0.9;
+        }
+
+        50% {
+          transform: scale(2.2) rotate(180deg);
+          opacity: 0.8;
+        }
+
+        75% {
+          transform: scale(1.5) rotate(270deg);
+          opacity: 0.6;
+        }
+
+        100% {
+          transform: scale(0.1) rotate(360deg);
+          opacity: 0;
+        }
       }
 
       @keyframes collectionEffectanime {
-        0% { transform: translateY(0px) scale(1) rotate(0deg); opacity: 1; }
-        25% { transform: translateY(-20px) scale(1.3) rotate(90deg); opacity: 0.9; }
-        50% { transform: translateY(-40px) scale(1.6) rotate(180deg); opacity: 0.8; }
-        75% { transform: translateY(-50px) scale(1.3) rotate(270deg); opacity: 0.6; }
-        100% { transform: translateY(-70px) scale(0.5) rotate(360deg); opacity: 0; }
+        0% {
+          transform: translateY(0px) scale(1) rotate(0deg);
+          opacity: 1;
+        }
+
+        25% {
+          transform: translateY(-20px) scale(1.3) rotate(90deg);
+          opacity: 0.9;
+        }
+
+        50% {
+          transform: translateY(-40px) scale(1.6) rotate(180deg);
+          opacity: 0.8;
+        }
+
+        75% {
+          transform: translateY(-50px) scale(1.3) rotate(270deg);
+          opacity: 0.6;
+        }
+
+        100% {
+          transform: translateY(-70px) scale(0.5) rotate(360deg);
+          opacity: 0;
+        }
       }
 
       @keyframes collectionEffectkawaii {
-        0% { transform: translateY(0px) scale(1); opacity: 1; }
-        25% { transform: translateY(-15px) scale(1.4) rotate(-15deg); opacity: 0.9; }
-        50% { transform: translateY(-30px) scale(1.7) rotate(15deg); opacity: 0.8; }
-        75% { transform: translateY(-45px) scale(1.4) rotate(-10deg); opacity: 0.6; }
-        100% { transform: translateY(-60px) scale(0.3) rotate(0deg); opacity: 0; }
+        0% {
+          transform: translateY(0px) scale(1);
+          opacity: 1;
+        }
+
+        25% {
+          transform: translateY(-15px) scale(1.4) rotate(-15deg);
+          opacity: 0.9;
+        }
+
+        50% {
+          transform: translateY(-30px) scale(1.7) rotate(15deg);
+          opacity: 0.8;
+        }
+
+        75% {
+          transform: translateY(-45px) scale(1.4) rotate(-10deg);
+          opacity: 0.6;
+        }
+
+        100% {
+          transform: translateY(-60px) scale(0.3) rotate(0deg);
+          opacity: 0;
+        }
       }
 
       @keyframes collectionEffectblush {
-        0% { transform: translateY(0px) scale(1); opacity: 1; }
-        50% { transform: translateY(-30px) scale(1.6); opacity: 0.8; }
-        100% { transform: translateY(-60px) scale(0.4); opacity: 0; }
+        0% {
+          transform: translateY(0px) scale(1);
+          opacity: 1;
+        }
+
+        50% {
+          transform: translateY(-30px) scale(1.6);
+          opacity: 0.8;
+        }
+
+        100% {
+          transform: translateY(-60px) scale(0.4);
+          opacity: 0;
+        }
       }
 
       @keyframes collectionEffectlove_eyes {
-        0% { transform: translateY(0px) scale(1) rotate(0deg); opacity: 1; }
-        50% { transform: translateY(-30px) scale(1.8) rotate(180deg); opacity: 0.8; }
-        100% { transform: translateY(-60px) scale(0.2) rotate(360deg); opacity: 0; }
+        0% {
+          transform: translateY(0px) scale(1) rotate(0deg);
+          opacity: 1;
+        }
+
+        50% {
+          transform: translateY(-30px) scale(1.8) rotate(180deg);
+          opacity: 0.8;
+        }
+
+        100% {
+          transform: translateY(-60px) scale(0.2) rotate(360deg);
+          opacity: 0;
+        }
       }
 
       @keyframes collectionEffecthero {
-        0% { transform: translateY(0px) scale(1) rotate(0deg); opacity: 1; }
-        25% { transform: translateY(-25px) scale(1.5) rotate(90deg); opacity: 0.9; }
-        50% { transform: translateY(-50px) scale(2) rotate(180deg); opacity: 0.8; }
-        75% { transform: translateY(-60px) scale(1.5) rotate(270deg); opacity: 0.6; }
-        100% { transform: translateY(-80px) scale(0.3) rotate(360deg); opacity: 0; }
+        0% {
+          transform: translateY(0px) scale(1) rotate(0deg);
+          opacity: 1;
+        }
+
+        25% {
+          transform: translateY(-25px) scale(1.5) rotate(90deg);
+          opacity: 0.9;
+        }
+
+        50% {
+          transform: translateY(-50px) scale(2) rotate(180deg);
+          opacity: 0.8;
+        }
+
+        75% {
+          transform: translateY(-60px) scale(1.5) rotate(270deg);
+          opacity: 0.6;
+        }
+
+        100% {
+          transform: translateY(-80px) scale(0.3) rotate(360deg);
+          opacity: 0;
+        }
       }
 
       @keyframes collectionEffectprincess {
-        0% { transform: translateY(0px) scale(1) rotate(0deg); opacity: 1; }
-        50% { transform: translateY(-40px) scale(1.9) rotate(180deg); opacity: 0.8; }
-        100% { transform: translateY(-80px) scale(0.2) rotate(360deg); opacity: 0; }
+        0% {
+          transform: translateY(0px) scale(1) rotate(0deg);
+          opacity: 1;
+        }
+
+        50% {
+          transform: translateY(-40px) scale(1.9) rotate(180deg);
+          opacity: 0.8;
+        }
+
+        100% {
+          transform: translateY(-80px) scale(0.2) rotate(360deg);
+          opacity: 0;
+        }
       }
 
       @keyframes collectionEffectpower {
-        0% { transform: translateY(0px) scale(1); opacity: 1; }
-        25% { transform: translateY(-20px) scale(1.6); opacity: 0.9; }
-        50% { transform: translateY(-40px) scale(2.2); opacity: 0.8; }
-        75% { transform: translateY(-60px) scale(1.6); opacity: 0.6; }
-        100% { transform: translateY(-80px) scale(0.3); opacity: 0; }
+        0% {
+          transform: translateY(0px) scale(1);
+          opacity: 1;
+        }
+
+        25% {
+          transform: translateY(-20px) scale(1.6);
+          opacity: 0.9;
+        }
+
+        50% {
+          transform: translateY(-40px) scale(2.2);
+          opacity: 0.8;
+        }
+
+        75% {
+          transform: translateY(-60px) scale(1.6);
+          opacity: 0.6;
+        }
+
+        100% {
+          transform: translateY(-80px) scale(0.3);
+          opacity: 0;
+        }
       }
 
       @keyframes collectionEffectexplosion {
-        0% { transform: translateY(0px) scale(1) rotate(0deg); opacity: 1; }
-        25% { transform: translateY(-30px) scale(1.8) rotate(90deg); opacity: 0.9; }
-        50% { transform: translateY(-60px) scale(2.5) rotate(180deg); opacity: 0.8; }
-        75% { transform: translateY(-80px) scale(1.8) rotate(270deg); opacity: 0.6; }
-        100% { transform: translateY(-100px) scale(0.2) rotate(360deg); opacity: 0; }
+        0% {
+          transform: translateY(0px) scale(1) rotate(0deg);
+          opacity: 1;
+        }
+
+        25% {
+          transform: translateY(-30px) scale(1.8) rotate(90deg);
+          opacity: 0.9;
+        }
+
+        50% {
+          transform: translateY(-60px) scale(2.5) rotate(180deg);
+          opacity: 0.8;
+        }
+
+        75% {
+          transform: translateY(-80px) scale(1.8) rotate(270deg);
+          opacity: 0.6;
+        }
+
+        100% {
+          transform: translateY(-100px) scale(0.2) rotate(360deg);
+          opacity: 0;
+        }
       }
 
       @keyframes collectionEffectsaiyan {
-        0% { transform: translateY(0px) scale(1) rotate(0deg); opacity: 1; }
-        50% { transform: translateY(-50px) scale(2.2) rotate(180deg); opacity: 0.8; }
-        100% { transform: translateY(-100px) scale(0.1) rotate(360deg); opacity: 0; }
+        0% {
+          transform: translateY(0px) scale(1) rotate(0deg);
+          opacity: 1;
+        }
+
+        50% {
+          transform: translateY(-50px) scale(2.2) rotate(180deg);
+          opacity: 0.8;
+        }
+
+        100% {
+          transform: translateY(-100px) scale(0.1) rotate(360deg);
+          opacity: 0;
+        }
       }
 
       @keyframes collectionEffectchibi {
-        0% { transform: translateY(0px) scale(1) rotate(0deg); opacity: 1; }
-        25% { transform: translateY(-20px) scale(1.4) rotate(90deg); opacity: 0.9; }
-        50% { transform: translateY(-40px) scale(1.8) rotate(180deg); opacity: 0.8; }
-        75% { transform: translateY(-60px) scale(1.4) rotate(270deg); opacity: 0.6; }
-        100% { transform: translateY(-80px) scale(0.3) rotate(360deg); opacity: 0; }
+        0% {
+          transform: translateY(0px) scale(1) rotate(0deg);
+          opacity: 1;
+        }
+
+        25% {
+          transform: translateY(-20px) scale(1.4) rotate(90deg);
+          opacity: 0.9;
+        }
+
+        50% {
+          transform: translateY(-40px) scale(1.8) rotate(180deg);
+          opacity: 0.8;
+        }
+
+        75% {
+          transform: translateY(-60px) scale(1.4) rotate(270deg);
+          opacity: 0.6;
+        }
+
+        100% {
+          transform: translateY(-80px) scale(0.3) rotate(360deg);
+          opacity: 0;
+        }
       }
-      
+
       /* Better timer display on mobile */
       .timer {
         word-break: break-word;
         hyphens: auto;
       }
-      
+
       /* Improve slideshow for mobile */
       .slideshow-container {
         margin: 15px 10px;
         border-radius: 12px;
       }
-      
+
       /* Better upload section */
       .upload-section {
         margin: 20px 10px;
@@ -1592,114 +2011,158 @@
     }
 
     @keyframes loadingPulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.3); opacity: 0.7; }
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.3);
+        opacity: 0.7;
+      }
     }
 
     @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
     }
 
     @keyframes fadeOut {
-      0% { opacity: 1; transform: scale(1); }
-      100% { opacity: 0; transform: scale(0); }
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(0);
+      }
     }
 
     @keyframes fallDown {
-      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
     }
 
     /* Letter Opening Animation Effects */
     @keyframes flowerBloom {
-      0% { 
-        transform: scale(0) rotate(0deg); 
-        opacity: 0; 
+      0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
       }
-      50% { 
-        transform: scale(1.3) rotate(180deg); 
-        opacity: 0.8; 
+
+      50% {
+        transform: scale(1.3) rotate(180deg);
+        opacity: 0.8;
       }
-      100% { 
-        transform: scale(1) rotate(360deg); 
-        opacity: 1; 
+
+      100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 1;
       }
     }
 
     @keyframes sparkleEffect {
-      0%, 100% { 
-        transform: scale(1) rotate(0deg); 
-        opacity: 1; 
+
+      0%,
+      100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
       }
-      25% { 
-        transform: scale(1.2) rotate(90deg); 
-        opacity: 0.8; 
+
+      25% {
+        transform: scale(1.2) rotate(90deg);
+        opacity: 0.8;
       }
-      50% { 
-        transform: scale(0.8) rotate(180deg); 
-        opacity: 1; 
+
+      50% {
+        transform: scale(0.8) rotate(180deg);
+        opacity: 1;
       }
-      75% { 
-        transform: scale(1.1) rotate(270deg); 
-        opacity: 0.9; 
+
+      75% {
+        transform: scale(1.1) rotate(270deg);
+        opacity: 0.9;
       }
     }
 
     @keyframes floatingPetal {
-      0% { 
-        transform: translateY(0px) rotate(0deg); 
-        opacity: 1; 
+      0% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 1;
       }
-      25% { 
-        transform: translateY(-20px) rotate(90deg); 
-        opacity: 0.8; 
+
+      25% {
+        transform: translateY(-20px) rotate(90deg);
+        opacity: 0.8;
       }
-      50% { 
-        transform: translateY(-10px) rotate(180deg); 
-        opacity: 1; 
+
+      50% {
+        transform: translateY(-10px) rotate(180deg);
+        opacity: 1;
       }
-      75% { 
-        transform: translateY(-30px) rotate(270deg); 
-        opacity: 0.7; 
+
+      75% {
+        transform: translateY(-30px) rotate(270deg);
+        opacity: 0.7;
       }
-      100% { 
-        transform: translateY(0px) rotate(360deg); 
-        opacity: 1; 
+
+      100% {
+        transform: translateY(0px) rotate(360deg);
+        opacity: 1;
       }
     }
 
     @keyframes celebrationBurst {
-      0% { 
-        transform: scale(0) rotate(0deg); 
-        opacity: 1; 
+      0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 1;
       }
-      50% { 
-        transform: scale(1.5) rotate(180deg); 
-        opacity: 0.8; 
+
+      50% {
+        transform: scale(1.5) rotate(180deg);
+        opacity: 0.8;
       }
-      100% { 
-        transform: scale(1) rotate(360deg); 
-        opacity: 0; 
+
+      100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 0;
       }
     }
 
     @keyframes loveMessageFloat {
-      0% { 
-        transform: translate(-50%, -50%) scale(0.5); 
-        opacity: 0; 
+      0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
       }
-      20% { 
-        transform: translate(-50%, -50%) scale(1.2); 
-        opacity: 1; 
+
+      20% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
       }
-      80% { 
-        transform: translate(-50%, -50%) scale(1); 
-        opacity: 1; 
+
+      80% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
       }
-      100% { 
-        transform: translate(-50%, -70%) scale(0.8); 
-        opacity: 0; 
+
+      100% {
+        transform: translate(-50%, -70%) scale(0.8);
+        opacity: 0;
       }
     }
 
@@ -1711,11 +2174,12 @@
     }
 
     @keyframes envelopeGlow {
-      0% { 
+      0% {
         box-shadow: 0 25px 60px rgba(255, 107, 157, 0.8);
         filter: brightness(1);
       }
-      100% { 
+
+      100% {
         box-shadow: 0 30px 80px rgba(255, 107, 157, 1);
         filter: brightness(1.2);
       }
@@ -1738,17 +2202,19 @@
     }
 
     @keyframes letterSlideIn {
-      0% { 
-        opacity: 0; 
-        transform: translate(-50%, -60%) scale(0.8); 
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -60%) scale(0.8);
       }
-      50% { 
-        opacity: 0.8; 
-        transform: translate(-50%, -45%) scale(1.05); 
+
+      50% {
+        opacity: 0.8;
+        transform: translate(-50%, -45%) scale(1.05);
       }
-      100% { 
-        opacity: 1; 
-        transform: translate(-50%, -50%) scale(1); 
+
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
       }
     }
 
@@ -1804,11 +2270,14 @@
 
     /* Breathing animation for letter */
     @keyframes letterBreathing {
-      0%, 100% { 
+
+      0%,
+      100% {
         transform: translate(-50%, -50%) scale(1);
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
       }
-      50% { 
+
+      50% {
         transform: translate(-50%, -50%) scale(1.02);
         box-shadow: 0 20px 50px rgba(255, 107, 157, 0.3);
       }
@@ -1893,35 +2362,57 @@
 
     /* Breathing animation for nickname modal */
     @keyframes nicknameBreathing {
-      0%, 100% { 
+
+      0%,
+      100% {
         transform: translate(-50%, -50%) scale(1);
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
       }
-      50% { 
+
+      50% {
         transform: translate(-50%, -50%) scale(1.05);
         box-shadow: 0 25px 60px rgba(255, 107, 157, 0.4);
       }
     }
 
     @keyframes envelopeSparkle {
-      0% { 
-        transform: translate(-50%, -50%) scale(0) rotate(0deg); 
-        opacity: 1; 
+      0% {
+        transform: translate(-50%, -50%) scale(0) rotate(0deg);
+        opacity: 1;
       }
-      50% { 
-        transform: translate(-50%, -50%) scale(1.5) rotate(180deg); 
-        opacity: 0.8; 
+
+      50% {
+        transform: translate(-50%, -50%) scale(1.5) rotate(180deg);
+        opacity: 0.8;
       }
-      100% { 
-        transform: translate(-50%, -50%) scale(0.5) rotate(360deg); 
-        opacity: 0; 
+
+      100% {
+        transform: translate(-50%, -50%) scale(0.5) rotate(360deg);
+        opacity: 0;
       }
     }
 
     @keyframes shake {
-      0%, 100% { transform: translateX(0); }
-      10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-      20%, 40%, 60%, 80% { transform: translateX(5px); }
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      10%,
+      30%,
+      50%,
+      70%,
+      90% {
+        transform: translateX(-5px);
+      }
+
+      20%,
+      40%,
+      60%,
+      80% {
+        transform: translateX(5px);
+      }
     }
 
     /* Enhanced Photo Modal Styles */
@@ -2253,18 +2744,41 @@
     }
 
     @keyframes heartFloat {
-      0%, 100% { transform: translateY(0px) scale(1); }
-      50% { transform: translateY(-10px) scale(1.1); }
+
+      0%,
+      100% {
+        transform: translateY(0px) scale(1);
+      }
+
+      50% {
+        transform: translateY(-10px) scale(1.1);
+      }
     }
 
     @keyframes brokenHeartFloat {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-10px) rotate(10deg); }
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-10px) rotate(10deg);
+      }
     }
 
     @keyframes soulmateGlow {
-      0%, 100% { transform: scale(1); filter: brightness(1); }
-      50% { transform: scale(1.2); filter: brightness(1.3); }
+
+      0%,
+      100% {
+        transform: scale(1);
+        filter: brightness(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+        filter: brightness(1.3);
+      }
     }
 
     /* Game Over Modal */
@@ -2364,11 +2878,13 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Loading Screen -->
   <div class="loading" id="loading" style="align-items:center; justify-content:center;">
     <div class="loading-content" style="text-align:center;">
-      <div id="loadingHeart" class="loading-heart" style="font-size:6rem; cursor:pointer; user-select:none; transition:transform 0.2s;">💖</div>
+      <div id="loadingHeart" class="loading-heart"
+        style="font-size:6rem; cursor:pointer; user-select:none; transition:transform 0.2s;">💖</div>
       <div class="loading-text" style="margin-top:20px; font-size:1.5rem;">Click the heart to open the love story</div>
     </div>
   </div>
@@ -2437,16 +2953,33 @@
       <div class="timer-container">
         <div class="timer" id="timer">⏳ Loading...</div>
         <div class="timer-subtitle" id="timerSubtitle">🕰️ Time since my heart started waiting for you</div>
-        <div style="font-family: 'Dancing Script', cursive; font-size: 1.1rem; font-weight: 600; color: #ff6b9d; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); margin-top: 15px; line-height: 1.6; letter-spacing: 0.5px;">💔 I realize my mistake but when I realize I look back and you are not there</div>
-        <div style="font-family: 'Dancing Script', cursive; font-size: 1.2rem; font-weight: 700; color: #e74c3c; text-shadow: 2px 2px 4px rgba(0,0,0,0.4); margin-top: 8px; line-height: 1.6; letter-spacing: 0.5px; animation: glow 3s ease-in-out infinite alternate;">💖 I love you until the end of my life</div>
-        <div style="font-family: 'Dancing Script', cursive; font-size: 1.1rem; font-weight: 600; color: #f39c12; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); margin-top: 8px; line-height: 1.6; letter-spacing: 0.5px;">⏳ I will wait forever - until my last breath</div>
-        <div style="font-family: 'Dancing Script', cursive; font-size: 1.2rem; font-weight: 700; color: #27ae60; text-shadow: 2px 2px 4px rgba(0,0,0,0.4); margin-top: 8px; line-height: 1.6; letter-spacing: 0.5px; animation: glow 3s ease-in-out infinite alternate;">🌹 My heart beats only for you, my love</div>
-        
-        <div style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
-          <div style="font-family: 'Dancing Script', cursive; font-size: 1.1rem; font-weight: 600; color: #e74c3c; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); margin-bottom: 10px; line-height: 1.6; letter-spacing: 0.5px;">💔 I lost you by my mistakes, and now silence is my only punishment. 🕯️</div>
-          <div style="font-family: 'Dancing Script', cursive; font-size: 1.1rem; font-weight: 600; color: #8e44ad; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); margin-bottom: 10px; line-height: 1.6; letter-spacing: 0.5px;">🥀 Too late I realized your worth — now my soul lives in regret. 😞</div>
-          <div style="font-family: 'Dancing Script', cursive; font-size: 1.1rem; font-weight: 600; color: #3498db; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); margin-bottom: 10px; line-height: 1.6; letter-spacing: 0.5px;">🌧️ If I could turn back time, I'd hold you and never let go. ⏳🤲</div>
-          <div style="font-family: 'Dancing Script', cursive; font-size: 1.1rem; font-weight: 600; color: #f39c12; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); line-height: 1.6; letter-spacing: 0.5px; animation: glow 3s ease-in-out infinite alternate;">🙏 Even if you never return, your love will remain my eternal lesson. 💭❤️</div>
+        <div
+          style="font-family: 'Dancing Script', cursive; font-size: 1.1rem; font-weight: 600; color: #ff6b9d; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); margin-top: 15px; line-height: 1.6; letter-spacing: 0.5px;">
+          💔 I realize my mistake but when I realize I look back and you are not there</div>
+        <div
+          style="font-family: 'Dancing Script', cursive; font-size: 1.2rem; font-weight: 700; color: #e74c3c; text-shadow: 2px 2px 4px rgba(0,0,0,0.4); margin-top: 8px; line-height: 1.6; letter-spacing: 0.5px; animation: glow 3s ease-in-out infinite alternate;">
+          💖 I love you until the end of my life</div>
+        <div
+          style="font-family: 'Dancing Script', cursive; font-size: 1.1rem; font-weight: 600; color: #f39c12; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); margin-top: 8px; line-height: 1.6; letter-spacing: 0.5px;">
+          ⏳ I will wait forever - until my last breath</div>
+        <div
+          style="font-family: 'Dancing Script', cursive; font-size: 1.2rem; font-weight: 700; color: #27ae60; text-shadow: 2px 2px 4px rgba(0,0,0,0.4); margin-top: 8px; line-height: 1.6; letter-spacing: 0.5px; animation: glow 3s ease-in-out infinite alternate;">
+          🌹 My heart beats only for you, my love</div>
+
+        <div
+          style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
+          <div
+            style="font-family: 'Dancing Script', cursive; font-size: 1.1rem; font-weight: 600; color: #e74c3c; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); margin-bottom: 10px; line-height: 1.6; letter-spacing: 0.5px;">
+            💔 I lost you by my mistakes, and now silence is my only punishment. 🕯️</div>
+          <div
+            style="font-family: 'Dancing Script', cursive; font-size: 1.1rem; font-weight: 600; color: #8e44ad; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); margin-bottom: 10px; line-height: 1.6; letter-spacing: 0.5px;">
+            🥀 Too late I realized your worth — now my soul lives in regret. 😞</div>
+          <div
+            style="font-family: 'Dancing Script', cursive; font-size: 1.1rem; font-weight: 600; color: #3498db; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); margin-bottom: 10px; line-height: 1.6; letter-spacing: 0.5px;">
+            🌧️ If I could turn back time, I'd hold you and never let go. ⏳🤲</div>
+          <div
+            style="font-family: 'Dancing Script', cursive; font-size: 1.1rem; font-weight: 600; color: #f39c12; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); line-height: 1.6; letter-spacing: 0.5px; animation: glow 3s ease-in-out infinite alternate;">
+            🙏 Even if you never return, your love will remain my eternal lesson. 💭❤️</div>
         </div>
       </div>
     </div>
@@ -2499,7 +3032,8 @@
           <h2>🔑 Secret Question</h2>
         </div>
         <div style="margin-bottom:20px; font-size:1.2rem;">You give me one sweet nickname, what is that?</div>
-        <input type="text" id="nicknameInput" placeholder="Enter nickname..." style="padding:10px; border-radius:8px; border:1px solid #ccc; width:80%; font-size:1.1rem;">
+        <input type="text" id="nicknameInput" placeholder="Enter nickname..."
+          style="padding:10px; border-radius:8px; border:1px solid #ccc; width:80%; font-size:1.1rem;">
         <div id="nicknameError" style="color:#e74c3c; margin-top:10px; min-height:24px;"></div>
         <button style="margin-top:20px;" class="upload-btn" onclick="checkNickname()">Submit</button>
       </div>
@@ -2508,7 +3042,7 @@
     <!-- Memories Section -->
     <div class="section">
       <h2 id="memoriesTitle">📸 Our Beautiful Memories</h2>
-      
+
       <!-- Photo Slideshow -->
       <div class="slideshow-container">
         <img class="slideshow-slide active" src="images/000.jpg" alt="Memory 1">
@@ -2590,7 +3124,7 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Upload Section -->
         <div class="upload-section">
           <h3 id="uploadTitle">📷 Add More Memories</h3>
@@ -2613,7 +3147,8 @@
             <span id="score">Level 1: 0/8 items</span>
           </div>
           <div class="game-controls">
-            <select id="difficultySelect" class="game-btn" style="background: #9b59b6; border: none; color: white; padding: 10px 15px; border-radius: 25px; font-size: 0.9rem; margin-right: 10px;">
+            <select id="difficultySelect" class="game-btn"
+              style="background: #9b59b6; border: none; color: white; padding: 10px 15px; border-radius: 25px; font-size: 0.9rem; margin-right: 10px;">
               <option value="easy">😊 Easy</option>
               <option value="medium" selected>😎 Medium</option>
               <option value="hard">🔥 Hard</option>
@@ -2676,7 +3211,7 @@
   <div class="letter-modal" id="photoModal">
     <div class="photo-modal-content">
       <button class="close-modal photo-close-btn" onclick="closePhotoModal()">×</button>
-      
+
       <!-- Zoom Controls -->
       <div class="zoom-controls">
         <button class="zoom-btn" onclick="zoomIn()" title="Zoom In">🔍+</button>
@@ -2684,18 +3219,18 @@
         <button class="zoom-btn" onclick="resetZoom()" title="Reset Zoom">🔄</button>
         <button class="zoom-btn" onclick="fitToScreen()" title="Fit to Screen">📐</button>
       </div>
-      
+
       <!-- Navigation Controls -->
       <div class="nav-controls">
         <button class="nav-btn" onclick="previousImage()" title="Previous Image">◀</button>
         <button class="nav-btn" onclick="nextImage()" title="Next Image">▶</button>
       </div>
-      
+
       <!-- Image Container -->
       <div class="image-container" id="imageContainer">
         <img id="modalImage" src="images/000.jpg" alt="Memory">
       </div>
-      
+
       <!-- Image Info -->
       <div class="image-info">
         <span id="imageCounter">1 / 8</span>
@@ -2710,10 +3245,15 @@
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <!-- Sound Effects -->
   <audio id="clickSound" preload="auto">
-    <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT" type="audio/wav">
+    <source
+      src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT"
+      type="audio/wav">
   </audio>
   <audio id="hoverSound" preload="auto">
-    <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT" type="audio/wav">
+    <source
+      src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT"
+      type="audio/wav">
   </audio>
 </body>
+
 </html>
